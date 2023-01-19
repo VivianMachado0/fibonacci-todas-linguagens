@@ -1,0 +1,24 @@
+#!/usr/bin/perl
+ 
+#Fibonacci Series using Perl
+ 
+#Initialize the loop
+$a = 0;
+$b = 1;
+ 
+#Print the first two numbers of the series
+print "The Fibonacci series is :\n$a\n$b\n";
+ 
+#Start the loop
+for ($i=0;$i<10;$i++)
+{
+  # Calculate next number in the series
+  $c = $a + $b;
+ 
+  #Print the number
+  print "$c\n";
+ 
+  # Re-initialize the variables for the next loop
+  $a = $b;
+  $b = $c;
+}
