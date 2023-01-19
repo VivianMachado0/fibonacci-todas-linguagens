@@ -1,0 +1,10 @@
+
+def fibonacci_num(num)
+  if num < 2
+    num
+  else
+    fibonacci_num(num - 1) + fibonacci_num(num - 2)
+  end
+end
+
+puts fibonacci_num(6)
