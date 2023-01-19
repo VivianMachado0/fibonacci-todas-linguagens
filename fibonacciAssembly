@@ -1,0 +1,42 @@
+
+  
+.model small
+.stack 100h
+.data
+        num dw 0
+        num2 dw 1
+        num3 dw 0
+        n dw 5
+        msg1 db 10,13,"Os 5 primeiros numeros de Fibonacci sao:$"
+        msg2 db 10,13,"$"
+
+.code
+main proc
+        mov ax, @data
+        mov ds, ax
+
+        mov ah, 09h
+        lea dx, msg1
+        int 21h
+
+        mov bx, n
+        mov cx, 0
+
+inicio:
+        add num,num2
+        mov num3, num2
+        mov num2, num
+        mov ax, num
+        add cx, 1
+        mov ah, 09h
+        lea dx, msg2
+        int 21h
+        mov ah, 02h
+        int 21h
+        cmp cx, bx
+        jne inicio
+        mov ah, 4ch
+        int 21h
+
+main endp
+end main
